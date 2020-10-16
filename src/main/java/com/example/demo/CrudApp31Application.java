@@ -2,9 +2,11 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class CrudApp31Application {
+public class CrudApp31Application extends SpringBootServletInitializer {
 
 	
 	
@@ -14,5 +16,9 @@ public class CrudApp31Application {
 		
 	}
 	
+	@Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(CrudApp31Application.class);
+    }
 
 }
