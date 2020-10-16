@@ -8,7 +8,7 @@ public class IntegrationTestingApplicationTests {
 	
 
 	
-	@org.testng.annotations.Test
+	//@org.testng.annotations.Test
 	public void getUserAutomation() {
 		
 		Response resp = given().when().get("http://localhost:8080/v1/users");
