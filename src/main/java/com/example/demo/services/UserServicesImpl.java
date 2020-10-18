@@ -17,6 +17,7 @@ import com.example.demo.request.UserRequest;
 import com.example.demo.response.GetUserResponse;
 import com.example.demo.response.GetUsersResponse;
 import com.example.demo.response.PostUserResponse;
+import com.fasterxml.jackson.core.util.VersionUtil;
 
 @Service // this will tell that it implem some interface
 public class UserServicesImpl implements UserServices {
@@ -25,12 +26,18 @@ public class UserServicesImpl implements UserServices {
 
 	@Autowired
 	private UserDao userdao;
+
+	
 	
 	private Properties prop = new Properties();
 	
 	{try{
-		InputStream input = new FileInputStream("src/main/resources/message.properties");
-		prop.load(input);
+//		InputStream input = new FileInputStream("src/main/resources/message.properties");
+//		prop.load(input);
+		
+		InputStream in = getClass().getResourceAsStream("message.properties");
+		prop.load(in);
+
 	}catch(Exception e) {
 		Log.info(e.getMessage()+"/n");
 	}}
