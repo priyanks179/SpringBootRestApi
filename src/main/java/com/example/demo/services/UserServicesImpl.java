@@ -32,7 +32,8 @@ public class UserServicesImpl implements UserServices {
 	private Properties prop = new Properties();
 	
 	{try{
-		InputStream input = new FileInputStream("WEB-INF/classes/message.properties");
+		InputStream input = new FileInputStream("../../../../message.properties");
+		
 		prop.load(input);
 
 
